@@ -5,9 +5,11 @@
 > Navigate to the branch (e.g.: ###<main-branch>) you want to merge the ###<feature-branch> into
 
 ```bash
-git merge <branch-name>
+git merge <branch-name> -m "<commit-msg>"
 ```
 > **NOTE**: Branches merged directly as there were no changes in the ###<main-branch>
+
+---
 
 ## 2. Non fast forward merge
 
