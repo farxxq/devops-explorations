@@ -1,0 +1,60 @@
+version: '3.8'
+
+# Services
+services:
+  # todo-app service
+  todo-app:
+    # docker image built in this directory (docker build -t todo-image .)
+    build: .
+    # container name to be created
+    container_name: todo-app
+    # directory to be saved in the volume
+    volumes:
+      - todo-data:/app/data    
+    ports:
+      - 3000:3000
+    # decides when the container should restart autmatically
+    restart: unless-stopped
+    environment:
+      - DEBUG="true"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - todo-network
+      - backend-network
+  
+  # postgres service
+  postgres:
+    image: postgres:15
+    container_name: postgres-db
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+      - ./schema.sql:/docker-entrypoint-initdb.d/schema.sql  # 👈 Maps your file into Postgres
+    ports:
+      - 5432:5432
+    restart: unless-stopped
+    environment:
+      - POSTGRES_USER=mohamed
+      - POSTGRES_PASSWORD=mohamed123
+      - POSTGRES_DB=todo
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U mohamed -d todo"] # CMD to tell docker the container is working or not
+      interval: 3s # Time delay before each automation health check
+      timeout: 5s # Maximum time given for the command to respond back
+      retries: 3 # Maximum tries given for the healthcheck
+      start_period: 10s # Grace time given to the container at start before executing the health check process
+    networks:
+      - backend-network
+
+# Recognize the network and bridge creation
+networks:
+  todo-network:
+    driver: bridge
+  backend-network:
+    driver: bridge
+
+# Recognizes the volumes mentioned in the services
+volumes:
+  todo-data:
+  postgres-data:

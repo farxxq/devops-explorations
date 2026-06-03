@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  web-service:
+    build: .
+    ports:
+      - "8080:8080"
+    volumes:
+      - cache-data:/app/cache
+    environment:
+      - DEBUG_MODE="true"
+      - API_KEY=secret_dev_key_123
+    depends_on:
+      - redis-cache
+
+  redis-cache:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+
+volumes:
+  cache-data:
+  redis-data:
