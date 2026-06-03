@@ -42,7 +42,8 @@ git add <filename>
 
 ---
 
-> **NOTE**: Adding for the practical purpose of merge conflict.
+> **NOTE**: Line added for merge conflict.
+> **NOTE**: Above line was added to show the merge conflicts practically.
 
 ---
 
