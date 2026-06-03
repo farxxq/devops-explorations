@@ -129,3 +129,8 @@ Feature Commit 2
 - a cleaner approach to get rid of `messy commits`
 --- 
 
+---
+
+> **NOTE**: Line added for merge conflict.
+> **NOTE**: Above line was added to show the merge conflicts practically.
+---
