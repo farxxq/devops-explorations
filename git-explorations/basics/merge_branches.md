@@ -1,7 +1,6 @@
 # Merge Branches
 
-## 1. Fast forward merge
-
+## 1. Fast forward merge:
 > Navigate to the branch (e.g.: ###<main-branch>) you want to merge the ###<feature-branch> into
 
 ```bash
@@ -11,8 +10,7 @@ git merge <branch-name> -m "<commit-msg>"
 
 ---
 
-## 2. Non fast forward merge
-
+## 2. Non fast forward merge:
 > Navigate to the branch (e.g.: ###<main-branch>) you want to merge the ###<feature-branch> into
 
 ```bash
@@ -22,8 +20,7 @@ git merge <branch-name>
 > **NOTE**: Branches merged when there has been changes in the ###<main-branch>
 
 
-## 3. Merge conflicts
-
+## 3. Merge conflicts:
 > Navigate to the branch (e.g.: ###<main-branch>) you want to merge the ###<feature-branch> into
 
 ```bash
