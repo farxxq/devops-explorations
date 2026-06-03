@@ -43,3 +43,8 @@ git add <filename>
 > Commit msg needs to be set or default one ###("Merge branch <feature-branch>") will be set 
 > **NOTE**: Branches merged when there has been changes in the same line in the same file ###<main-branch>
 
+---
+
+> **NOTE**: Adding for the practical purpose of merge conflict.
+
+---
