@@ -22,3 +22,16 @@ Merge into main
 - Click pull request
 
 - If no merge conflicts, review and click merge request or rebase merge request (for linear history maintainance)
+
+- If no merge conflicts, review and click merge request or rebase merge request (for linear history maintainance).
+
+- If merge conflicts, solve it then
+
+```bash
+git add <file-name>
+```
+```bash
+git commit -m "<commit-msg>"
+```
+
+- Automatically reflected in the pull request, review and `merge request` or `rebase merge request` (for linear history maintanance).
