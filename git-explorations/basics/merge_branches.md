@@ -76,16 +76,6 @@ git rebase --continue
 - Will replay the commits in `feature-branch` and if conflicts occur perform the same steps
 - no conflicts, commit message will show up change or use the default the commit msg
 
-> Push the changes to the remote repo
-
-```bash
-git push origin <branch-name> --force-with-lease
-```
-**NOTE**: 
--`--force-with-lease` mandatory, As Git maintains the commits done to the `feature-branch` (e.g.: `D`), rebase copies these commit to `D'`, as the history is being rewritten had to force push.
-- If the remote branch still points to the commit you expect (the one you had before rebasing), Git allows the force push.
-- If someone else has pushed new commits, Git refuses to overwrite, preventing you from accidentally deleting their work. 
-
 ## 3. Abort rebase
 
 ```bash
