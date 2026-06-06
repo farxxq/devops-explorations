@@ -126,6 +126,5 @@ Feature Commit 1
 Feature Commit 2
 ```
 - a cleaner approach to get rid of `messy commits`
-
 --- 
 
